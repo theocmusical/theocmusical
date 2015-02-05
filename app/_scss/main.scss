@@ -193,6 +193,10 @@ img { max-width: 100%; }
     padding: 10px 20px;
     border: 0;
     font-size: 16px;
+
+    &:hover {
+      background-color: #ff7a0f;
+    }
 }
 
 .response {
