@@ -29,7 +29,6 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
@@ -43,6 +42,12 @@ body {
 }
 ol, ul {
     list-style: none;
+}
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
 }
 blockquote, q {
     quotes: none;
@@ -60,14 +65,19 @@ table {
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+    background-color: #fff;
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+input, textarea, keygen, select, button {
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+    font-size: 100%; 
+}
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
@@ -78,24 +88,69 @@ a:visited { color: #a0a; }
 
 img { max-width: 100%; }
 
+@mixin clearfix {
+    zoom: 1;
+
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+/*****************************************************************************/
+/*
+/* Column
+/*
+/*****************************************************************************/
+.columns {
+    @include clearfix;
+}
+
+.columns_column {
+    float: left;
+    width: 50%;
+}
+
 /*****************************************************************************/
 /*
 /* Home
 /*
 /*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
+.home {
+    h2 {
+        text-align: center;
+        font-size: 3em;
+        padding-bottom: 1em;
+        line-height: 1em;
+    }
 
-.posts li {
-  line-height: 1.75em;
-}
+    h3 {
+        text-align: center;
+        font-size: 2em;
+        padding: 1em 0;
+    }
 
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+    h4 {
+        text-align: center;
+        font-size: 1.5em;
+        padding: 1em 0;
+    }
+
+    .center {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    @media screen and (max-width: 420px) {
+        .columns_column {
+            float: none;
+            width: 100%;
+        }
+    }
 }
 
 /*****************************************************************************/
@@ -105,7 +160,6 @@ img { max-width: 100%; }
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
   text-align: justify;
   max-width: 42em;
   margin: 10px auto;
@@ -173,6 +227,7 @@ img { max-width: 100%; }
 /* MAILKIMP */
 .signup {
     position: relative;
+    margin-bottom: 5em;
 }
 
 .email {
