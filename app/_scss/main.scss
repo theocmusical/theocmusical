@@ -39,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    padding: 1em;
 }
 ol, ul {
     list-style: none;
@@ -67,8 +68,14 @@ html, body { height: 100%; }
 body {
     background-color: #fff;
     font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        font-size: 18px;
+    }
 }
 
 input, textarea, keygen, select, button {
@@ -136,6 +143,7 @@ img { max-width: 100%; }
 
     h4 {
         text-align: center;
+        text-transform: uppercase;
         font-size: 1.5em;
         padding: 1em 0;
     }
@@ -160,7 +168,6 @@ img { max-width: 100%; }
 /*****************************************************************************/
 
 .site {
-  text-align: justify;
   max-width: 42em;
   margin: 10px auto;
   line-height: 1.5em;
