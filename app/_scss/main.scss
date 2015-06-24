@@ -267,6 +267,29 @@ img { max-width: 100%; }
     padding: 20px;
 }
 
+.corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    width: 0;
+    height: 0;
+    border-top: 200px solid orange;
+    border-left: 200px solid transparent;
+}
+
+.corner-text {
+    color: #fff;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 0;
+    right: -20px;
+    transform: rotate(45deg);
+
+    padding-top: 60px;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
