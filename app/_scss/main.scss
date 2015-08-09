@@ -4,7 +4,7 @@
 /*
 /*****************************************************************************/
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -22,8 +22,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -33,7 +33,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -83,7 +83,7 @@ input, textarea, keygen, select, button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: 100%; 
+    font-size: 100%;
 }
 
 h1 { margin-bottom: 1em; }
@@ -153,10 +153,12 @@ img { max-width: 100%; }
         margin-bottom: 2em;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 655px) {
         .columns_column {
             float: none;
-            width: 100%;
+            width: auto;
+            max-width: 400px;
+            margin: 0 auto;
         }
     }
 }
@@ -231,6 +233,24 @@ img { max-width: 100%; }
   border: 0;
 }
 
+.tickets {
+    li {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+
+        line-height: 50px;
+    }
+
+    .button {
+        margin: 0 0 10px 10px;
+        line-height: 30px;
+    }
+}
+
 /* MAILKIMP */
 .signup {
     position: relative;
@@ -245,20 +265,28 @@ img { max-width: 100%; }
 }
 
 .button {
-    -webkit-appearance: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-
     background-color: orange;
     height: 50px;
     padding: 10px 20px;
     border: 0;
     font-size: 16px;
+    color: #000;
+    text-decoration: none;
 
     &:hover {
-      background-color: #ff7a0f;
+        background-color: #ff7a0f;
     }
+
+    &:visited {
+        color: #000;
+    }
+}
+
+.signup .button {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .response {
@@ -271,7 +299,7 @@ img { max-width: 100%; }
     position: absolute;
     top: 0;
     right: 0;
-    
+
     width: 0;
     height: 0;
     border-top: 200px solid orange;
