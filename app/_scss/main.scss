@@ -311,11 +311,10 @@ img { max-width: 100%; }
     text-transform: uppercase;
 
     position: absolute;
-    top: 0;
-    right: -20px;
+    top: 48px;
+    right: 0;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-
-    padding-top: 60px;
 }
 
 /*****************************************************************************/
