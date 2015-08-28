@@ -280,6 +280,11 @@ img { max-width: 100%; }
     &:visited {
         color: #000;
     }
+
+    &.soldout {
+      background-color: #aaa;
+      color: #fff;
+    }
 }
 
 .signup .button {
