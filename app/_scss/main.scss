@@ -252,6 +252,12 @@ img { max-width: 100%; }
     }
 }
 
+/* DISABLED BLOCK */
+.disabled_block {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 /* QUOTES */
 .quote {
     margin-bottom: 40px;
