@@ -1,3 +1,5 @@
+$orange: #fa4b2a;
+
 /*****************************************************************************/
 /*
 /* Common
@@ -468,7 +470,7 @@ img {
 
     width: 0;
     height: 0;
-    border-top: 200px solid orange;
+    border-top: 200px solid $orange;
     border-left: 200px solid transparent;
 }
 
@@ -477,7 +479,7 @@ img {
     top: 27px;
     right: 3px;
 
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
 
     transform: rotate(45deg);
