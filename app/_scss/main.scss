@@ -13,35 +13,115 @@
     box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
+
     font: inherit;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 body {
-    line-height: 1;
     padding: 1em;
+
+    line-height: 1;
 }
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 em {
@@ -50,23 +130,30 @@ em {
 strong {
     font-weight: bold;
 }
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
 table {
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
 }
 
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+}
 
 body {
     background-color: #fff;
+
     font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
     font-size: 20px;
     text-align: center;
@@ -74,33 +161,58 @@ body {
 
 @media screen and (max-width: 420px) {
     body {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
-input, textarea, keygen, select, button {
+input,
+textarea,
+keygen,
+select,
+button {
     font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 100%;
 }
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-.center { text-align: center; }
+h1 {
+    margin-bottom: 1em;
+}
+p {
+    margin: 1em 0;
+}
+.center {
+    text-align: center;
+}
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #00a; }
+a {
+    color: #00a;
+}
+a:hover {
+    color: #000;
+}
+a:visited {
+    color: #00a;
+}
 
-img { max-width: 100%; }
+img {
+    max-width: 100%;
+}
 
 @mixin clearfix {
     zoom: 1;
 
-    &:before, &:after {
+    &:before,
+    &:after {
         content: '';
+
         display: table;
     }
 
@@ -130,28 +242,32 @@ img { max-width: 100%; }
 /*****************************************************************************/
 .home {
     h2 {
-        text-align: center;
-        font-size: 3em;
         padding-bottom: 1em;
+
+        font-size: 3em;
         line-height: 1em;
+        text-align: center;
     }
 
     h3 {
-        text-align: center;
-        font-size: 2em;
         padding: 1em 0;
+
+        font-size: 2em;
+        text-align: center;
     }
 
     h4 {
+        padding: 1em 0;
+
+        font-size: 1.5em;
         text-align: center;
         text-transform: uppercase;
-        font-size: 1.5em;
-        padding: 1em 0;
     }
 
     .center {
-        text-align: center;
         margin-bottom: 2em;
+
+        text-align: center;
     }
 
     @media screen and (max-width: 655px) {
@@ -171,90 +287,96 @@ img { max-width: 100%; }
 /*****************************************************************************/
 
 .site {
-  max-width: 42em;
-  margin: 10px auto;
-  line-height: 1.5em;
+    max-width: 42em;
+    margin: 10px auto;
+
+    line-height: 1.5em;
 }
 
 .header a {
-  font-weight: bold;
-  text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .title {
-  display: inline-block;
-  margin-bottom: 2em;
+    display: inline-block;
+    margin-bottom: 2em;
 }
 
 .title a {
-  color: #a00;
+    color: #a00;
 }
 
 .title a:hover {
-  color: #000;
+    color: #000;
 }
 
 .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
+    margin-left: 1em;
+
+    color: #aaa;
 }
 
 .header a.extra:hover {
-  color: #000;
+    color: #000;
 }
 
 .meta {
-  color: #aaa;
+    color: #aaa;
 }
 
 .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
+    overflow: hidden;
+    margin-top: 2em;
+    border-top: 4px solid #eee;
+
+    color: #666;
+    font-size: 80%;
 }
 
 .footer .contact {
-  float: left;
-  margin-right: 3em;
+    float: left;
+    margin-right: 3em;
 }
 
 .footer .contact a {
-  color: #8085C1;
+    color: #8085c1;
 }
 
 .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
+    float: right;
+    margin-top: 1.1em;
+    margin-right: -.2em;
 }
 
 .footer .rss img {
-  border: 0;
+    border: 0;
 }
 
 .tickets {
     li {
         display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: row;
         flex-direction: row;
-        -webkit-justify-content: flex-end;
         justify-content: flex-end;
 
         line-height: 50px;
+
+        -webkit-flex-direction: row;
+        -webkit-justify-content: flex-end;
     }
 
     .button {
         margin: 0 0 10px 10px;
+
         line-height: 30px;
     }
 }
 
 /* DISABLED BLOCK */
 .disabled_block {
-    opacity: 0.3;
+    opacity: .3;
+
     pointer-events: none;
 }
 
@@ -266,23 +388,27 @@ img { max-width: 100%; }
 /* MAILKIMP */
 .signup {
     position: relative;
+
     margin-bottom: 5em;
 }
 
 .email {
     width: 80%;
     height: 50px;
-    font-size: 16px;
     padding: 10px 20px;
+
+    font-size: 16px;
 }
 
 .button {
-    background-color: orange;
     height: 50px;
     padding: 10px 20px;
     border: 0;
-    font-size: 16px;
+
+    background-color: orange;
+
     color: #000;
+    font-size: 16px;
     text-decoration: none;
 
     &:hover {
@@ -294,22 +420,45 @@ img { max-width: 100%; }
     }
 
     &.soldout {
-      background-color: #aaa;
-      color: #fff;
+        background-color: #aaa;
+
+        color: #fff;
     }
 }
 
 .signup .button {
-    -webkit-appearance: none;
     position: absolute;
     top: 0;
     right: 0;
+
+    -webkit-appearance: none;
 }
 
 .response {
     margin-top: 10px;
-    background-color: #3eff6b;
     padding: 20px;
+
+    background-color: #3eff6b;
+}
+
+.embed-container {
+    position: relative;
+
+    overflow: hidden;
+    max-width: 100%;
+    height: 0;
+    margin-bottom: 30px;
+    padding-bottom: 56.25%;
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0; left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .corner {
@@ -324,14 +473,30 @@ img { max-width: 100%; }
 }
 
 .corner-text {
-    color: #fff;
+    position: absolute;
+    top: 27px;
+    right: 3px;
+
+    color: #000;
     text-transform: uppercase;
 
-    position: absolute;
-    top: 48px;
-    right: 0;
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+
+    -webkit-transform: rotate(45deg);
+}
+
+/* MOBILE */
+@media only screen and (max-width : 700px) {
+    .corner {
+        border-top-width: 150px;
+        border-left-width: 150px;
+    }
+    .corner-text {
+        top: 8px;
+        right: 8px;
+
+        font-size: 14px;
+    }
 }
 
 /*****************************************************************************/
@@ -342,32 +507,37 @@ img { max-width: 100%; }
 
 /* standard */
 .post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
+    padding: 0 .4em;
+    border: 1px solid #ddd;
+
+    background-color: #eef;
 }
 
-.post ul, .post ol {
-  margin-left: 1.35em;
+.post ul,
+.post ol {
+    margin-left: 1.35em;
 }
 
 .post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+    padding: 0 .2em;
+    border: 1px solid #ddd;
+
+    background-color: #eef;
 }
 
 .post pre code {
-  border: none;
+    border: none;
 }
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+    border: 1px solid #000;
+
+    background-color: #333;
+
+    color: #fff;
 }
 
 .post pre.terminal code {
-  background-color: #333;
+    background-color: #333;
 }
