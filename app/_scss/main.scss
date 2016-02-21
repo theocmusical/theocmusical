@@ -251,6 +251,7 @@ header {
 
     width: 100%;
 
+    opacity: .9;
     background-color: $orange;
 
     text-align: left;
@@ -269,12 +270,8 @@ header {
 .hero {
     position: relative;
 
+    overflow: hidden;
     min-height: 285px;
-    margin-top: 5%;
-    padding-bottom: 40%;
-
-    background: url('/img/hero.jpg') no-repeat center center;
-    background-size: cover;
 
     p {
         position: absolute;
@@ -288,6 +285,17 @@ header {
         text-align: center;
         text-shadow: 1px 1px #333;
     }
+}
+
+.hero__image {
+    position: absolute;
+
+    width: 100%;
+    min-height: 285px;
+    padding-bottom: 40%;
+
+    background: url('/img/hero.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 /*****************************************************************************/
