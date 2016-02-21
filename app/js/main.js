@@ -3,7 +3,7 @@
         var heroContainer = document.querySelector('.hero');
         var heroImage = document.querySelector('.hero__image');
         var setHeroHeight = function() {
-            heroContainer.style.height = heroImage.clientHeight + "px";
+            heroContainer.style.height = heroImage.clientHeight + 'px';
         };
 
         setHeroHeight();
