@@ -1,4 +1,7 @@
 $orange: #fa4b2a;
+$orange-dark: #d63a1c;
+$ink: #2a211c;
+$cream: #fbf7f2;
 
 /*****************************************************************************/
 /*
@@ -152,21 +155,20 @@ body {
 }
 
 body {
-    background-color: #fff;
+    background-color: $cream;
 
+    color: $ink;
     font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
     font-size: 20px;
     text-align: center;
+
+    -webkit-font-smoothing: antialiased;
 }
 
 @media screen and (max-width: 420px) {
     body {
-        font-size: 16px;
+        font-size: 17px;
     }
-}
-
-.site {
-    padding: 1em;
 }
 
 input,
@@ -196,18 +198,29 @@ p {
     text-align: center;
 }
 
-a {
-    color: #00a;
+a,
+a:visited {
+    color: $orange-dark;
+    text-decoration: underline;
+    text-decoration-color: rgba(250, 75, 42, .35);
+    text-underline-offset: 3px;
 }
 a:hover {
-    color: #000;
-}
-a:visited {
-    color: #00a;
+    color: $ink;
+    text-decoration-color: $orange;
 }
 
 img {
     max-width: 100%;
+}
+
+hr {
+    width: 60px;
+    height: 4px;
+    margin: 3em auto;
+    border: 0;
+
+    background-color: $orange;
 }
 
 @mixin clearfix {
@@ -247,18 +260,19 @@ img {
 header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 
     width: 100%;
 
-    opacity: .95;
     background-color: $orange;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
 
     text-align: left;
 
     img {
-        width: 250px;
-        padding: 10px;
+        display: block;
+        width: 180px;
+        padding: 12px 16px;
     }
 }
 
@@ -271,31 +285,69 @@ header {
     position: relative;
 
     overflow: hidden;
-    min-height: 285px;
+    padding: 90px 16px 0;
 
-    p {
-        position: absolute;
-        bottom: -15px;
-
-        width: 100%;
-
-        color: #fff;
-        font-weight: bold;
-        font-size: 30px;
-        text-align: center;
-        text-shadow: 1px 1px #333;
-    }
+    background-color: #1c1410;
 }
 
-.hero__image {
+/* Blurred copy of the photo fills the full width so the sharp image never
+   has to be stretched past its native resolution. */
+.hero__backdrop {
     position: absolute;
-
-    width: 100%;
-    min-height: 285px;
-    padding-bottom: 40%;
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
 
     background: url('/img/hero.jpg') no-repeat center center;
     background-size: cover;
+    opacity: .6;
+
+    -webkit-filter: blur(28px) saturate(1.3);
+    filter: blur(28px) saturate(1.3);
+}
+
+.hero__image {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    max-height: 62vh;
+    margin: 0 auto;
+    border-radius: 6px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.hero__tagline {
+    position: relative;
+
+    margin: 0;
+    padding: 22px 0 26px;
+
+    color: #fff;
+    font-family: 'Oswald', 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+}
+
+@media screen and (max-width: 420px) {
+    .hero {
+        padding-top: 76px;
+    }
+
+    .hero__tagline {
+        padding: 14px 0 18px;
+
+        font-size: 18px;
+    }
 }
 
 /*****************************************************************************/
@@ -313,10 +365,16 @@ header {
     }
 
     h3 {
-        padding: 1em 0;
+        padding: 0 0 .8em;
 
-        font-size: 2em;
+        color: $ink;
+        font-family: 'Oswald', 'Roboto Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1.6em;
+        line-height: 1.2;
+        letter-spacing: .04em;
         text-align: center;
+        text-transform: uppercase;
     }
 
     h4 {
@@ -350,10 +408,11 @@ header {
 /*****************************************************************************/
 
 .site {
-    max-width: 42em;
-    margin: 10px auto;
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 3em 16px;
 
-    line-height: 1.5em;
+    line-height: 1.6em;
 }
 
 .header a {
@@ -422,6 +481,7 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
 
         line-height: 50px;
 
@@ -430,7 +490,9 @@ header {
     }
 
     .button {
+        height: auto;
         margin: 0 0 10px 10px;
+        padding: 6px 16px;
 
         line-height: 30px;
     }
@@ -438,48 +500,84 @@ header {
 
 /* DISABLED BLOCK */
 .disabled_block {
-    opacity: .3;
+    opacity: .35;
 
     pointer-events: none;
 }
 
 /* QUOTES */
 .quote {
-    margin-bottom: 40px;
+    margin-bottom: 1.5em;
+    padding: 1.2em 1.4em;
+    border-left: 4px solid $orange;
+    border-radius: 0 6px 6px 0;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+
+    font-size: .92em;
+    text-align: left;
+
+    a {
+        display: block;
+        margin-top: .6em;
+
+        font-weight: bold;
+        font-size: .85em;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
 }
 
 /* MAILKIMP */
 .signup {
     position: relative;
 
-    margin-bottom: 5em;
+    max-width: 520px;
+    margin: 0 auto 2em;
 }
 
 .email {
-    width: 80%;
-    height: 50px;
-    padding: 10px 20px;
+    width: 100%;
+    height: 54px;
+    padding: 10px 150px 10px 20px;
+    border: 2px solid #e2d8cc;
+    border-radius: 27px;
+
+    background-color: #fff;
 
     font-size: 16px;
+
+    &:focus {
+        border-color: $orange;
+        outline: none;
+    }
 }
 
 .button {
+    display: inline-block;
     height: 50px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border: 0;
+    border-radius: 25px;
 
-    background-color: orange;
+    background-color: $orange;
 
-    color: #000;
+    color: #fff;
+    font-weight: bold;
     font-size: 16px;
     text-decoration: none;
 
+    cursor: pointer;
+
     &:hover {
-        background-color: #ff7a0f;
+        background-color: $orange-dark;
+
+        color: #fff;
     }
 
     &:visited {
-        color: #000;
+        color: #fff;
     }
 
     &.soldout {
@@ -491,8 +589,8 @@ header {
 
 .signup .button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 2px;
 
     -webkit-appearance: none;
 }
@@ -500,8 +598,9 @@ header {
 .response {
     margin-top: 10px;
     padding: 20px;
+    border-radius: 6px;
 
-    background-color: #3eff6b;
+    background-color: #d7f5df;
 }
 
 .embed-container {
@@ -512,6 +611,9 @@ header {
     height: 0;
     margin-bottom: 30px;
     padding-bottom: 56.25%;
+    border-radius: 6px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
 
     iframe,
     object,
