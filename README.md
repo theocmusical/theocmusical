@@ -9,6 +9,10 @@ Source for [www.theocmusical.com](https://www.theocmusical.com), built with [Ast
 
 Open [http://localhost:4321](http://localhost:4321).
 
+## Checks
+
+Pull requests run `.github/workflows/ci.yml`: type-check (`npm run check`), build, and an internal link check.
+
 ## Deploy
 
 Pushing to `master` builds the site and deploys it to GitHub Pages via `.github/workflows/deploy.yml`.
