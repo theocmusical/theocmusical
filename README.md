@@ -1,16 +1,15 @@
-# INSTALL GUIDE
+# The O.C. The Musical
+
+Source for [www.theocmusical.com](https://www.theocmusical.com), built with [Astro](https://astro.build).
+
+## Develop
 
     npm install
-    bundle install
+    npm run dev
 
-# GET STARTED
+Open [http://localhost:4321](http://localhost:4321).
 
-    grunt serve
+## Deploy
 
-Open up [http://localhost:9000](http://localhost:9000) in your browser.
-
-Voila!
-
-# DEPLOY
-
-    grunt deploy
+Pushing to `master` builds the site and deploys it to GitHub Pages via `.github/workflows/deploy.yml`.
+To check a production build locally: `npm run build && npm run preview`.

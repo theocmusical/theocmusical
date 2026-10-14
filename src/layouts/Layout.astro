@@ -1,0 +1,56 @@
+---
+import { Image, getImage } from 'astro:assets';
+import hero from '../assets/hero.jpg';
+import logo from '../assets/logo.png';
+import '../styles/main.scss';
+
+interface Props {
+  title: string;
+  template?: string;
+}
+
+const { title, template } = Astro.props;
+
+// Small, blurred-anyway copy of the hero for the full-width backdrop.
+const heroBackdrop = await getImage({ src: hero, width: 800, format: 'webp' });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="The O.C.: The Musical — the unauthorized musical parody of the hit TV teen drama." />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class={template}>
+    <header>
+      <Image src={logo} alt="The O.C.: The Musical" width={360} loading="eager" />
+    </header>
+
+    <div class="hero">
+      <div class="hero__backdrop" style={`background-image: url('${heroBackdrop.src}')`}></div>
+      <Image
+        class="hero__image"
+        src={hero}
+        alt="The cast of The O.C.: The Musical"
+        widths={[600, 900, 1350, 1800]}
+        sizes="(max-width: 932px) calc(100vw - 32px), 900px"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <p class="hero__tagline">The unauthorized musical parody!</p>
+    </div>
+
+    <div class="site">
+      <slot />
+    </div>
+  </body>
+</html>
